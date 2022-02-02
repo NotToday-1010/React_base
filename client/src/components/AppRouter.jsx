@@ -11,18 +11,16 @@ const AppRouter = () => {
         <Routes>
             {privateRoutes.map(route =>
                 <Route
-                    component={route.component}
+                    element={<route.component/>}
                     path={route.path}
-                    exact={route.exact}
                 />
             )}
-            {/*{publicRoutes.map(route =>*/}
-            {/*    <Route*/}
-            {/*        component={route.component}*/}
-            {/*        path={route.path}*/}
-            {/*        exact={route.exact}*/}
-            {/*    />*/}
-            {/*)}*/}
+            {publicRoutes.map(route =>
+                <Route
+                    element={route.component}
+                    path={route.path}
+                />
+            )}
         </Routes>
     );
 };
